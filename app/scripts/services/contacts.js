@@ -95,6 +95,6 @@ angular.module('addressBookApp')
           image: "https://source.unsplash.com/category/people",
           favorite:false
         }
-      ]
+      ];
     };
   });
