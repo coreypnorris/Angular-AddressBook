@@ -22,7 +22,8 @@ describe('Service: contacts', function () {
       var contact = data[i];
       expect(contact.id >= 1).toBe(true);
       expect(contact.name.length > 1).toBe(true);
-      expect(contact.address.length > 1).toBe(true);
+      expect(contact.address1.length > 1).toBe(true);
+      expect(contact.address2.length > 1).toBe(true);
       expect(contact.phone.length > 1).toBe(true);
       expect(contact.image.length > 1).toBe(true);  
       expect(typeof(contact.favorite) === "boolean").toBe(true);
