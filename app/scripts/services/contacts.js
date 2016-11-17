@@ -33,7 +33,7 @@ angular.module('addressBookApp')
           phone:"(294) 283-3246",
           email:"Oron1931@rhyta.com",
           image: "https://images.unsplash.com/photo-1470256699805-a29e1b58598a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=d9de63d1fe9f4b69113e0e4ac8c51cb7",
-          favorite:false
+          favorite:true
         },
         {
           id:3,
@@ -43,7 +43,7 @@ angular.module('addressBookApp')
           phone:"(748) 620-4830",
           email:"Shek1992@superrito.com",
           image: "https://images.unsplash.com/photo-1419814193935-ddb634a0ddda?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=95f5c890ba053fd79c11e9efa64d069c",
-          favorite:false
+          favorite:true
         },
         {
           id:4,

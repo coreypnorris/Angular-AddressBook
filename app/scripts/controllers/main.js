@@ -10,6 +10,9 @@
 angular.module('addressBookApp')
   .controller('MainCtrl', ['$scope', 'contacts', function ($scope, contacts) {
     $scope.contacts = contacts.data();
+    $scope.toggleFavorite = function(contact){
+      contact.favorite = contact.favorite === true ? false : true;
+    };
   }])
   .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();

@@ -2,7 +2,7 @@
   <div ng-repeat="contact in contacts">
     <md-content>
        <div>
-        <md-card md-theme="{{'dark-blue'}}" md-theme-watch>
+        <md-card md-theme="{{contact.favorite ? 'dark-blue' : 'dark-grey'}}" md-theme-watch>
           <md-card-title>
             <md-card-title-text>
               <span class="md-headline">{{contact.name}}</span>
@@ -18,7 +18,9 @@
             </md-card-title-media>
           </md-card-title>
           <md-card-actions layout="row" layout-align="end center">
-            <md-button>Action 1</md-button>
+            <md-button ng-click="toggleFavorite(contact);" class="md-icon-button" aria-label="Favorite">
+              <md-icon md-svg-icon="images/favorite.svg"></md-icon>
+            </md-button>
             <md-button>Action 2</md-button>
           </md-card-actions>
         </md-card>
