@@ -1,1 +1,28 @@
-<h1>This is the main view</h1>
+<div ng-controller="MainCtrl">
+  <div ng-repeat="contact in contacts">
+    <md-content>
+       <div>
+        <md-card md-theme="{{'dark-blue'}}" md-theme-watch>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{contact.name}}</span>
+              <span class="md-subhead">{{contact.address1}}</span>
+              <span class="md-subhead">{{contact.address2}}</span>
+              <span class="md-subhead">{{contact.phone}}</span>
+              <span class="md-subhead">{{contact.email}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <div class="md-media-lg card-media">
+                <img ng-src="{{contact.image}}">
+              </div>
+            </md-card-title-media>
+          </md-card-title>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button>Action 1</md-button>
+            <md-button>Action 2</md-button>
+          </md-card-actions>
+        </md-card>
+      </div>
+    </md-content>
+  </div>
+</div>
