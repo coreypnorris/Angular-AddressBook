@@ -32,6 +32,9 @@ var paths = {
     'bower_components/angular-touch/angular-touch.js',
     'bower_components/angular-ui-sortable/sortable.js',
     'bower_components/angular-local-storage/dist/angular-local-storage.js',
+    'bower_components/angular-aria/angular-aria.js',
+    'bower_components/angular-material/angular-material.js',
+    'bower_components/angular-material/angular-material-mocks.js',
     'test/mock/**/*.js',
     'test/spec/**/*.js'
   ],
