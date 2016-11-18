@@ -35,6 +35,7 @@ var paths = {
     'bower_components/angular-aria/angular-aria.js',
     'bower_components/angular-material/angular-material.js',
     'bower_components/angular-material/angular-material-mocks.js',
+    'bower_components/angular-material-icons/angular-material-icons.js',
     'test/mock/**/*.js',
     'test/spec/**/*.js'
   ],
