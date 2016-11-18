@@ -29,9 +29,9 @@ describe('Controller: MainCtrl', function () {
   });
 
   it('should have a function that removes a contact from the collection', function () {
-    expect(scope.contacts.length).toBe(10);
     var firstContact = scope.contacts[0];
+    expect(scope.contacts.indexOf(firstContact)).toBe(0);
     scope.remove(firstContact);
-    expect(scope.contacts.length).toBe(9);
+    expect(scope.contacts.indexOf(firstContact)).toBe(-1);
   });
 });
