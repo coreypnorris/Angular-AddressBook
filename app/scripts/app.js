@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngMaterial'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $mdAriaProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -27,4 +27,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+      $mdAriaProvider.disableWarnings();
   });
