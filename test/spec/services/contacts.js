@@ -33,4 +33,18 @@ describe('Service: contacts', function () {
     expect(firstContact.image === "https://images.unsplash.com/photo-1415471659643-57043b686f87?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=2576adcec53bb1ee41558ee540ac44b9").toBe(true);
     expect(firstContact.favorite === true).toBe(true);
   });
+
+  it('should have a function that adds new contacts to the initial data', function () {
+    var data = contacts.data();
+    expect(data.length === 10).toBe(true);
+    var newContactId = data.length + 1;
+    var newContact = {
+      id:newContactId,
+      firstname:"John",
+      lastname:"Smith"
+    };
+    contacts.add(newContact);
+    data = contacts.data();
+    expect(data.length === 11).toBe(true);
+  });
 });

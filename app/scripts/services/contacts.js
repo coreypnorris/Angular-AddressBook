@@ -12,9 +12,7 @@ angular.module('addressBookApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
     // service is just a constructor function
     // that will be called with 'new'
-
-    this.data = function() {
-      return [
+    var initialData = [
         {
           id:1,
           firstname:"Kaylyn",
@@ -166,5 +164,12 @@ angular.module('addressBookApp')
           favorite:false
         }
       ];
+
+    this.data = function() {
+      return initialData;
+    };
+
+    this.add = function(newContact) {
+      initialData.push(newContact);
     };
   });
