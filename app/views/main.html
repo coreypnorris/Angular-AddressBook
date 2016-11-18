@@ -1,14 +1,18 @@
+ 
+
 <div ng-repeat="contact in contacts">
   <md-content>
     <div>
       <md-card md-theme="{{contact.favorite ? 'dark-blue' : 'dark-grey'}}" md-theme-watch>
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline">{{contact.name}}</span>
+            <span class="md-headline">{{contact.firstname}} {{contact.lastname}}</span>
             <span class="md-subhead">{{contact.address1}}</span>
             <span class="md-subhead">{{contact.address2}}</span>
+            <span class="md-subhead">{{contact.city}}, {{contact.state}} {{contact.postalcode}}</span>
             <span class="md-subhead">{{contact.phone}}</span>
             <span class="md-subhead">{{contact.email}}</span>
+            <span class="md-subhead">{{contact.dateofbirth}}</span>
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-lg card-media">
@@ -18,11 +22,11 @@
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
           <md-button ng-click="toggleFavorite(contact);" class="md-icon-button">
-            <md-icon md-svg-icon="images/favorite.svg"></md-icon>
+            <ng-md-icon icon="favorite"></ng-md-icon>
           </md-button>
 
           <md-button ng-click="remove(contact);" class="md-icon-button">
-            <md-icon md-svg-icon="images/delete.svg"></md-icon>
+            <ng-md-icon icon="delete"></ng-md-icon>
           </md-button>
         </md-card-actions>
       </md-card>
