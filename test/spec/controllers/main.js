@@ -27,4 +27,11 @@ describe('Controller: MainCtrl', function () {
     scope.toggleFavorite(firstContact);
     expect(firstContact.favorite).toBe(false);
   });
+
+  it('should have a function that removes a contact from the collection', function () {
+    expect(scope.contacts.length).toBe(10);
+    var firstContact = scope.contacts[0];
+    scope.remove(firstContact);
+    expect(scope.contacts.length).toBe(9);
+  });
 });

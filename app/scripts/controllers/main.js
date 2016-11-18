@@ -10,8 +10,12 @@
 angular.module('addressBookApp')
   .controller('MainCtrl', ['$scope', 'contacts', function ($scope, contacts) {
     $scope.contacts = contacts.data();
-    $scope.toggleFavorite = function(contact){
+    $scope.toggleFavorite = function(contact) {
       contact.favorite = contact.favorite === true ? false : true;
+    };
+    $scope.remove = function(contact) { 
+      var index = $scope.contacts.indexOf(contact);
+      $scope.contacts.splice(index, 1);
     };
   }])
   .config(function($mdThemingProvider) {

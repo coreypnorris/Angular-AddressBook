@@ -1,5 +1,4 @@
-<div ng-controller="MainCtrl">
-  <div ng-repeat="contact in contacts">
+<div ng-controller="MainCtrl" ng-repeat="contact in contacts"> 
     <md-content>
        <div>
         <md-card md-theme="{{contact.favorite ? 'dark-blue' : 'dark-grey'}}" md-theme-watch>
@@ -18,13 +17,15 @@
             </md-card-title-media>
           </md-card-title>
           <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-click="toggleFavorite(contact);" class="md-icon-button" aria-label="Favorite">
+            <md-button ng-click="toggleFavorite(contact);" class="md-icon-button">
               <md-icon md-svg-icon="images/favorite.svg"></md-icon>
             </md-button>
-            <md-button>Action 2</md-button>
+
+            <md-button ng-click="remove(contact);" class="md-icon-button">
+              <md-icon md-svg-icon="images/delete.svg"></md-icon>
+            </md-button>
           </md-card-actions>
         </md-card>
       </div>
     </md-content>
-  </div>
 </div>
