@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngMaterial'
+    'ngMaterial',
+    'ngMdIcons'
   ])
   .config(function ($routeProvider, $mdAriaProvider) {
     $routeProvider
@@ -23,6 +24,11 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
+      })
+      .when('/NewContact', {
+        templateUrl: 'views/newcontact.html',
+        controller: 'NewcontactCtrl',
+        controllerAs: 'NewContact'
       })
       .otherwise({
         redirectTo: '/'
