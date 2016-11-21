@@ -11,8 +11,9 @@ angular.module('addressBookApp')
   .controller('NewcontactCtrl', ['$scope', '$location', 'contacts', 'states', function ($scope, $location, contacts, states) {
     $scope.states = states.data();
     $scope.contacts = contacts.data();
+    $scope.showHints = true;
     
-    $scope.newcontact = {};
+    $scope.newContact = {};
 
     $scope.save = function(newContact) {
       contacts.save(newContact); 

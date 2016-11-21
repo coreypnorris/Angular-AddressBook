@@ -30,7 +30,7 @@
             
             <div class="hint" ng-show="showHints">How can we reach you?</div>
 
-            <div ng-messages="userForm.email.$error" ng-hide="showHints">
+            <div ng-messages="userForm.email.$error">
               <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
                 Your email must be between 10 and 100 characters long and look like an e-mail address.
               </div>
@@ -43,7 +43,7 @@
 
             <div class="hint" ng-show="showHints">(###) ###-####</div>
 
-            <div ng-messages="userForm.phone.$error" ng-hide="showHints">
+            <div ng-messages="userForm.phone.$error">
               <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
             </div>
           </md-input-container>
@@ -76,7 +76,7 @@
         </div>
 
         <md-input-container class="md-block">
-          <md-button type="submit">Submit</md-button>
+          <md-button type="submit">Save</md-button>
         </md-input-container>
       </form>
     </div>
