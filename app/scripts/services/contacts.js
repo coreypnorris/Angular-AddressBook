@@ -169,7 +169,8 @@ angular.module('addressBookApp')
       return initialData;
     };
 
-    this.add = function(newContact) {
+    this.save = function(newContact) {
+      newContact.id = initialData.length + 1;
       initialData.push(newContact);
     };
   });

@@ -34,7 +34,7 @@ describe('Service: contacts', function () {
     expect(firstContact.favorite === true).toBe(true);
   });
 
-  it('should have a function that adds new contacts to the initial data', function () {
+  it('should have a function that saves new contacts to the initial data', function () {
     var data = contacts.data();
     expect(data.length === 10).toBe(true);
     var newContactId = data.length + 1;
@@ -43,7 +43,7 @@ describe('Service: contacts', function () {
       firstname:"John",
       lastname:"Smith"
     };
-    contacts.add(newContact);
+    contacts.save(newContact);
     data = contacts.data();
     expect(data.length === 11).toBe(true);
   });

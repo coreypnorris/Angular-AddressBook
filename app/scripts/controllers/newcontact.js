@@ -12,15 +12,10 @@ angular.module('addressBookApp')
     $scope.states = states.data();
     $scope.contacts = contacts.data();
     
-    var newContactId = $scope.contacts.length + 1;
-    $scope.newcontact = {
-      id: newContactId,
-      firstname:"John",
-      lastname:"Smith"
-    };
+    $scope.newcontact = {};
 
     $scope.save = function(newContact) {
-      contacts.add(newContact); 
+      contacts.save(newContact); 
       $location.path( "/");
     }; 
   }]);
