@@ -16,9 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngMaterial',
-    'ngMdIcons'
+    'ngMdIcons',
+    'pascalprecht.translate'
   ])
-  .config(function ($routeProvider, $mdAriaProvider) {
+  .config(function ($routeProvider, $mdAriaProvider, $translateProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -34,4 +35,10 @@ angular
         redirectTo: '/'
       });
       $mdAriaProvider.disableWarnings();
+      $translateProvider.useSanitizeValueStrategy('escape');
+      $translateProvider.useStaticFilesLoader({
+        prefix: 'scripts/strings/strings-',
+        suffix: '.json'
+      });
+      $translateProvider.preferredLanguage('en-US');
   });

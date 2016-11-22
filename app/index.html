@@ -68,6 +68,35 @@
        ga('send', 'pageview');
     </script>
 
+    <script>
+      function createCookie(name,value,days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/";
+      }
+
+      function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+      }
+
+      function eraseCookie(name) {
+        createCookie(name,"",-1);
+      }
+
+      createCookie("UICulture","1033",7);
+    </script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <!-- endbower -->
@@ -75,10 +104,12 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/strings/config.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/services/contacts.js"></script>
     <script src="scripts/controllers/newcontact.js"></script>
     <script src="scripts/services/states.js"></script>
+    <script src="scripts/services/cultures.js"></script>
     <!-- endbuild -->
 </body>
 </html>
