@@ -8,9 +8,9 @@
  * Controller of the addressBookApp
  */
 angular.module('addressBookApp')
-  .controller('MainCtrl', ['$scope', 'contacts', '$translate', 'cultures', '$cookies', function ($scope, contacts, $translate, cultures, $cookies) {
-    var listOfCultures = cultures.data();
-    $scope.cultures = listOfCultures;
+  .controller('MainCtrl', ['$scope', 'contacts', '$translate', '$cookies', function ($scope, contacts, $translate, $cookies) {
+    // var listOfCultures = cultures.data();
+    // $scope.cultures = listOfCultures;
     $scope.contacts = contacts.data();
     $scope.toggleFavorite = function(contact) {
       contact.favorite = contact.favorite === true ? false : true;
@@ -19,15 +19,15 @@ angular.module('addressBookApp')
       var index = $scope.contacts.indexOf(contact);
       $scope.contacts.splice(index, 1);
     };
-    $scope.setCultureBasedOnCookie = function(){
-      var cookieCultureId = $cookies.get("UICulture");
-      var cookieCultureName = $.grep(listOfCultures, function(e){ return e.id === cookieCultureId; })[0].name;
-      $translate.use(cookieCultureName);
-    };
-    $scope.saveCultureToCookie = function(cultureId){
-      createCookie("UICulture",cultureId,7);
-    };
-    $scope.setCultureBasedOnCookie();
+    // $scope.setCultureBasedOnCookie = function(){
+    //   var cookieCultureId = $cookies.get("UICulture");
+    //   var cookieCultureName = $.grep(listOfCultures, function(e){ return e.id === cookieCultureId; })[0].name;
+    //   $translate.use(cookieCultureName);
+    // };
+    // $scope.saveCultureToCookie = function(cultureId){
+    //   createCookie("UICulture",cultureId,7);
+    // };
+    // $scope.setCultureBasedOnCookie();
   }])
   .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
